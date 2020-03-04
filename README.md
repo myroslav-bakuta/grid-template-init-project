@@ -1,2 +1,2 @@
-# grid-template-init-project
-First training project
+# Grid project
+First training project (release branch)
