@@ -1,5 +1,6 @@
 temp/
 *.bat
+menu.txt
 
 # IntellijIdea files
 .idea/
