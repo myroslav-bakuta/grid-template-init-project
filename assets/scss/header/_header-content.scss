@@ -1,0 +1,32 @@
+.header-content {
+    position: relative;
+
+    &__container {
+        @extend %container;
+    }
+
+    &__title {
+        text-align: center;
+
+        @include lg-min {
+            margin: 0 0 53px;
+        }
+
+        @include lg-md {
+            margin: 0 0 43px;
+        }
+
+        @include md {
+            margin: 0 0 43px;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+
+        .btn:not(:last-of-type) {
+            margin-right: $gap;
+        }
+    }
+}

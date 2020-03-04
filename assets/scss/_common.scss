@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: scroll;
+    letter-spacing: 0.1em;
+    color: $color-gray;
+    font-size: $font-size;
+    font-family: $font-main;
+}
+
+h1 {
+    font-family: $font-header;
+    font-weight: 300;
+    line-height: 1.2em;
+    letter-spacing: 0.08em;
+
+    @media lg-min {
+        font-size: 3.75rem;
+    }
+
+    @media lg-md {
+        font-size: 2.5rem;
+    }
+
+    @media md {
+        font-size: 1.875rem;
+    }
+}
+
+h2 {
+    font-family: $font-header;
+    color: $color-primary;
+    line-height: 1.2em;
+}
+
+a {
+    text-decoration: none;
+    color: $color-light;
+}
+
+.btn {
+    border: 2px solid $color-light;
+    background-color: rgba($color-light, 0.1);
+    min-width: 250px;
+}
+
+.btn-accent {
+    border: 2px solid $color-primary;
+    background-color: rgba($color-primary, 0.8);
+    min-width: 350px;
+}
+
+.btn,
+.btn-accent {
+    padding: 18px $gap;
+    height: 60px;
+    display: block;
+    text-align: center;
+    font-size: 1.125rem;
+    letter-spacing: 0.1em;
+    transition: background-color 0.5s;
+
+    &:hover,
+    &:focus {
+        background-color: $color-accent;
+    }
+}
