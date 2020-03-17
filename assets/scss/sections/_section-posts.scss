@@ -1,0 +1,145 @@
+.posts {
+    padding-top: $gap * 5;
+    padding-bottom: $gap * 5;
+
+    &__container {
+        @extend %container;
+    }
+
+    h2 {
+        margin-top: 0;
+        font-size: 2.5rem;
+        letter-spacing: 0.1em;
+        color: $color-primary;
+        margin-bottom: 56px;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.posts-list {
+    display: grid;
+    grid-gap: $gap;
+    padding-bottom: $gap;
+
+    @include lg-min {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "a1 a1 a2 a3"
+            "a4 a5 a6 a6";
+    }
+
+    @include lg-md {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "a1 a1 a2"
+            "a3 a4 a4"
+            "a5 a5 a6";
+    }
+
+    @include md-sm {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "a1 a2"
+            "a3 a4"
+            "a5 a6";
+    }
+
+    @include sm {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "a1"
+            "a2"
+            "a3"
+            "a4"
+            "a5"
+            "a6";
+    }
+}
+
+.posts-item {
+    background-color: darken($color-light, 5%);
+
+    &:nth-of-type(1) {
+        grid-area: a1;
+    }
+
+    &:nth-of-type(2) {
+        grid-area: a2;
+    }
+
+    &:nth-of-type(3) {
+        grid-area: a3;
+    }
+
+    &:nth-of-type(4) {
+        grid-area: a4;
+    }
+
+    &:nth-of-type(5) {
+        grid-area: a5;
+    }
+
+    &:nth-of-type(6) {
+        grid-area: a6;
+    }
+
+    &:hover {
+        background-color: darken($color-light, 15%);
+        transition: background-color 0.5s;
+
+        .posts-item__link__image img {
+            transform: scale(1.1);
+        }
+
+        h3,
+        p {
+            color: darken($color-gray, 15%);
+        }
+    }
+
+    &__link {
+        display: grid;
+        grid-template-rows: 300px 1fr;
+        text-align: center;
+        overflow: hidden;
+        height: 100%;
+        color: $color-gray;
+
+        &__image {
+            display: flex;
+            overflow: hidden;
+            // align-content: center;
+            // justify-content: center;
+
+            img {
+                width: 100%;
+                transition: transform 0.5s;
+                object-fit: cover;
+            }
+        }
+
+        &__description {
+            display: grid;
+            align-content: center;
+            padding: $gap;
+
+            h3 {
+                font-family: $font-header;
+                transition: color 0.5s;
+                margin: ($gap - 2) 0;
+                letter-spacing: 0.02em;
+            }
+
+            p {
+                font-family: $font-main;
+                transition: color 0.5s;
+                margin: ($gap - 2) 0;
+                letter-spacing: normal;
+            }
+        }
+    }
+}
