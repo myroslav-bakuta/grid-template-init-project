@@ -1,6 +1,8 @@
 temp/
 *.bat
 menu.txt
+prepros.config
+prepros-6.config
 
 # IntellijIdea files
 .idea/
